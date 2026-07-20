@@ -1,0 +1,2 @@
+realtime: https://aqicn.org/station/india/mumbai/kurla/
+historical: https://aqicn.org/historical/#city:india/mumbai/kurla
