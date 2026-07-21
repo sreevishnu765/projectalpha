@@ -58,8 +58,8 @@ def data_prep():
     
     # export
     split_index = int(len(model_df) * 0.85)
-    train_df = model_df.iloc[:split_index]
-    val_df = model_df.iloc[split_index:]
-    train_df.to_csv("train_df.csv", index=False)
-    val_df.to_csv("val_df.csv", index=False)
-    return train_df, val_df
+    TRNSET = model_df.iloc[:split_index]
+    VALSET = model_df.iloc[split_index:]
+    TRNSET.to_csv("TRNSET.csv", index=False)
+    VALSET.to_csv("VALSET.csv", index=False)
+    return TRNSET, VALSET
