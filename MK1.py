@@ -1,8 +1,9 @@
 import pandas as pd
-from PANDA import data_prep
+from DATA import data_prep
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import numpy as np
+import joblib
 
 # data preparation
 TRNSET, VALSET = data_prep()
@@ -33,3 +34,7 @@ def train_and_eval(TRNSET, VALSET, feature_cols_extended, target_col):
 model_day1, rmse1, mae1, mape1 = train_and_eval(TRNSET, VALSET, feature_cols_extended, 'pm25_tgt1')
 model_day2, rmse2, mae2, mape2 = train_and_eval(TRNSET, VALSET, feature_cols_extended, 'pm25_tgt2')
 model_day3, rmse3, mae3, mape3 = train_and_eval(TRNSET, VALSET, feature_cols_extended, 'pm25_tgt3')
+
+joblib.dump(model_day1, "model_day1.pkl")
+joblib.dump(model_day2, "model_day2.pkl")
+joblib.dump(model_day3, "model_day3.pkl")

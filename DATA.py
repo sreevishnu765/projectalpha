@@ -21,8 +21,10 @@ def data_prep():
     merged_df.index.name = 'date'
     merged_df = merged_df.reset_index()
 
+    print(merged_df.isnull().sum())
+    
     # outlier data interpolation
-    outlier_dates = ['2022-01-23', '2022-03-27', '2023-04-28', '2024-02-24', '2024-07-05', '2024-10-02']
+    outlier_dates = ['2022-01-08', '2024-07-20', '2025-06-14', '2025-11-21']
     merged_df.loc[merged_df['date'].isin(outlier_dates), 'pm25'] = None
     merged_df['pm25'] = merged_df['pm25'].interpolate(method='linear')
 
@@ -58,8 +60,11 @@ def data_prep():
     
     # export
     split_index = int(len(model_df) * 0.85)
-    TRNSET = model_df.iloc[:split_index]
-    VALSET = model_df.iloc[split_index:]
-    TRNSET.to_csv("TRNSET.csv", index=False)
-    VALSET.to_csv("VALSET.csv", index=False)
-    return TRNSET, VALSET
+    BORTRNSET = model_df.iloc[:split_index]
+    BORVALSET = model_df.iloc[split_index:]
+    BORTRNSET.to_csv("TRNSET.csv", index=False)
+    BORVALSET.to_csv("VALSET.csv", index=False)
+    return BORTRNSET, BORVALSET
+
+if __name__ == "__main__":
+    data_prep()

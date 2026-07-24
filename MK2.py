@@ -1,5 +1,5 @@
 import pandas as pd
-from PANDA import data_prep
+from DATA import data_prep
 import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.preprocessing import MinMaxScaler
