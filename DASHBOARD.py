@@ -45,7 +45,7 @@ with col6:
 st.divider()
 
 st.subheader("Advisory")
-today_advisory = get_advisory(today_category, sensitivity)  # need get_advisory imported too
+today_advisory = get_advisory(today_category, sensitivity)
 st.info(today_advisory)
 
 if today_caution:
@@ -103,7 +103,6 @@ with status_col2:
 
 with status_col3:
     st.success("✓ Model Loaded")
-    st.caption("MAPE: 16.79% (Day+1)")
 
 with status_col4:
     from datetime import datetime
