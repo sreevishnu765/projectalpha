@@ -1,7 +1,7 @@
 realtime: https://aqicn.org/station/india/mumbai/kurla/
 historical: https://aqicn.org/historical/#city:india/mumbai/kurla
 
-
+OPENAQ PASS: Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints
 
 ***************************************************************************************************************************************************************
 ERROR COMPARISION TABLE FOR MK1 (LR) & MK2 (LSTM)
@@ -37,4 +37,5 @@ MAPE COMPARISION TABLE FOR VALIDATION AND TESTING OF MK1
 +---------+-----------------+-----------+
 ***************************************************************************************************************************************************************
 
-OPENAQ PASS: Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints
+
+

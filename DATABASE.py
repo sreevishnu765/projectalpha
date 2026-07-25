@@ -54,7 +54,7 @@ def fetch_pm25():
     response = requests.get(url, headers=headers)
     data = response.json()
     for result in data["results"]:
-        if result["sensorsId"] == 12252658:
+        if result["sensorsId"] == 12238393:
             return result["datetime"]["local"], result["value"]
     return None, None
 
@@ -89,7 +89,6 @@ def daily_update():
     print(f"Inserted reading for {pollutant_date}: PM2.5={pm25}")
 
 if __name__ == "__main__":
-    date, pm25 = fetch_pm25()
-    print(date, pm25)
+    # In DATABASE.py, or however you're triggering it
     daily_update()
     print(get_recent_readings())
