@@ -89,6 +89,5 @@ def daily_update():
     print(f"Inserted reading for {pollutant_date}: PM2.5={pm25}")
 
 if __name__ == "__main__":
-    # In DATABASE.py, or however you're triggering it
     daily_update()
     print(get_recent_readings())
