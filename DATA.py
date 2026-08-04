@@ -22,9 +22,9 @@ def data_prep():
     merged_df = merged_df.reset_index()
 
     print(merged_df.isnull().sum())
-    
+
     # outlier data interpolation
-    outlier_dates = ['2022-01-08', '2024-07-20', '2025-06-14', '2025-11-21']
+    outlier_dates = ['2022-01-23', '2022-03-27', '2023-04-28', '2024-02-24', '2024-07-05', '2024-10-02']
     merged_df.loc[merged_df['date'].isin(outlier_dates), 'pm25'] = None
     merged_df['pm25'] = merged_df['pm25'].interpolate(method='linear')
 
@@ -39,16 +39,11 @@ def data_prep():
     merged_df['pm25_lag2'] = merged_df['pm25'].shift(2)
     merged_df['pm25_lag3'] = merged_df['pm25'].shift(3)
     merged_df['pm25_lag7'] = merged_df['pm25'].shift(7)
-    merged_df['pm25_roll7'] = merged_df['pm25'].rolling(window = 7).mean().shift(1)
+    merged_df['pm25_roll3'] = merged_df['pm25'].rolling(window = 3).mean().shift(1)
     merged_df['tmax_lag1'] = merged_df['temperature_2m_max (°C)'].shift(1)
     merged_df['tmin_lag1'] = merged_df['temperature_2m_min (°C)'].shift(1)
     merged_df['wind_lag1'] = merged_df['wind_speed_10m_max (km/h)'].shift(1)
     merged_df['hum_lag1'] = merged_df['relative_humidity_2m_max (%)'].shift(1)
-    merged_df['pm10_lag1'] = merged_df['pm10'].shift(1)
-    merged_df['o3_lag1'] = merged_df['o3'].shift(1)
-    merged_df['no2_lag1'] = merged_df['no2'].shift(1)
-    merged_df['so2_lag1'] = merged_df['so2'].shift(1)
-    merged_df['co_lag1'] = merged_df['co'].shift(1)
 
     # target data
     merged_df['pm25_tgt1'] = merged_df['pm25'].shift(-1)
@@ -56,15 +51,15 @@ def data_prep():
     merged_df['pm25_tgt3'] = merged_df['pm25'].shift(-3)
 
     # clear NaN values
-    model_df = merged_df.dropna(subset=['pm25_lag1', 'pm25_lag2', 'pm25_lag3', 'pm25_lag7', 'pm25_roll7', 'tmax_lag1', 'tmin_lag1', 'wind_lag1', 'hum_lag1', 'pm10_lag1', 'o3_lag1', 'no2_lag1', 'so2_lag1', 'co_lag1', 'pm25_tgt1', 'pm25_tgt2', 'pm25_tgt3'])
-    
+    model_df = merged_df.dropna(subset=['pm25_lag1', 'pm25_lag2', 'pm25_lag3', 'pm25_lag7', 'pm25_roll3', 'tmax_lag1', 'tmin_lag1', 'wind_lag1', 'hum_lag1', 'pm25_tgt1', 'pm25_tgt2', 'pm25_tgt3'])
+
     # export
     split_index = int(len(model_df) * 0.85)
-    BORTRNSET = model_df.iloc[:split_index]
-    BORVALSET = model_df.iloc[split_index:]
-    BORTRNSET.to_csv("TRNSET.csv", index=False)
-    BORVALSET.to_csv("VALSET.csv", index=False)
-    return BORTRNSET, BORVALSET
+    TRNSET = model_df.iloc[:split_index]
+    VALSET = model_df.iloc[split_index:]
+    TRNSET.to_csv("TRNSET.csv", index=False)
+    VALSET.to_csv("VALSET.csv", index=False)
+    return TRNSET, VALSET
 
 if __name__ == "__main__":
     data_prep()

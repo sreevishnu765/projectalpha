@@ -1,4 +1,5 @@
-breakpoints = [(0, 30, 0, 50, "Good"), (31, 60, 51, 100, "Satisfactory"), (61, 90, 101, 200, "Moderate"), (91, 120, 201, 300, "Poor"), (121, 250, 301, 400, "Very Poor"), (251, 380, 401, 500, "Severe"),]
+breakpoints = [(0, 30, 0, 50, "Good"), (30.1, 60, 51, 100, "Satisfactory"), (60.1, 90, 101, 200, "Moderate"), (90.1, 120, 201, 300, "Poor"), (120.1, 250, 301, 400, "Very Poor"), (250.1, 380, 401, 500, "Severe"),
+]
 
 def pm25_to_aqi(concentration):
     for BP_low, BP_high, AQI_low, AQI_high, category in breakpoints:

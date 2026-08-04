@@ -6,6 +6,11 @@ OPENAQ PASS: Gone. Version 1 and Version 2 API endpoints are retired and no long
 
 TO RUN WEBAPP: python -m streamlit run DASHBOARD.py
 
+TO COMMIT:
+git add .
+git commit -m "Describe what you changed"
+git push
+
 ***************************************************************************************************************************************************************
 ERROR COMPARISION TABLE FOR MK1 (LR) & MK2 (LSTM)
 +-------------+-------------------+-------+
@@ -39,3 +44,8 @@ MAPE COMPARISION TABLE FOR VALIDATION AND TESTING OF MK1
 | Day+3   | 12.20%          | 19.45%    |
 +---------+-----------------+-----------+
 ***************************************************************************************************************************************************************
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Historical data shows recurring brief low-PM2.5 periods (10-22 µg/m³) during monsoon onset in 2022, 2023, and 2024, typically lasting 2-6 days before reverting to higher levels. However, these periods represent a small minority of total training examples, and the model's linear fit is dominated by the more frequent higher-pollution days. Current 2026 conditions show a more sustained low-pollution period, which — combined with the underrepresentation of such patterns in training, likely explains the model's tendency to overpredict relative to live readings.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

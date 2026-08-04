@@ -6,13 +6,14 @@ from CONVERT import pm25_to_aqi, get_advisory
 def prepare_live_features():
     df = get_recent_readings()
     df = df.sort_values('date').reset_index(drop=True)
+    df['date'] = pd.to_datetime(df['date'])
     n_rows = len(df)
     
     df['pm25_lag1'] = df['pm25'].shift(1)
     df['pm25_lag2'] = df['pm25'].shift(2) if n_rows >= 3 else df['pm25_lag1']
     df['pm25_lag3'] = df['pm25'].shift(3) if n_rows >= 4 else df['pm25_lag1']
     df['pm25_lag7'] = df['pm25'].shift(7) if n_rows >= 8 else df['pm25_lag1']
-    df['pm25_roll7'] = df['pm25'].rolling(window=min(7, n_rows), min_periods=1).mean().shift(1)
+    df['pm25_roll3'] = df['pm25'].rolling(window=min(3, n_rows), min_periods=1).mean().shift(1)
     
     df['tmax_lag1'] = df['temperature_2m_max'].shift(1)
     df['tmin_lag1'] = df['temperature_2m_min'].shift(1)
@@ -20,12 +21,12 @@ def prepare_live_features():
     df['hum_lag1'] = df['relative_humidity_2m_max'].shift(1)
     
     latest_row = df.iloc[[-1]].copy()
-    latest_row = latest_row.fillna(method='ffill', axis=1)
+    latest_row = latest_row.ffill()
     
     return latest_row
 
 def generate_forecast():
-    feature_cols = ['pm25_lag1', 'pm25_lag2', 'pm25_lag3', 'pm25_lag7', 'pm25_roll7', 'tmax_lag1', 'tmin_lag1', 'wind_lag1', 'hum_lag1']
+    feature_cols = ['pm25_lag1', 'pm25_lag2', 'pm25_lag3', 'pm25_lag7', 'pm25_roll3', 'tmax_lag1', 'tmin_lag1', 'wind_lag1', 'hum_lag1']
 
     latest = prepare_live_features()
     X_live = latest[feature_cols]

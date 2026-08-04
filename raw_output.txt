@@ -1,0 +1,234 @@
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-17  ...                            95
+1  2026-07-18  ...                            96
+2  2026-07-19  ...                            93
+3  2026-07-20  ...                            94
+4  2026-07-21  ...                            96
+5  2026-07-22  ...                            91
+6  2026-07-23  ...                            91
+7  2026-07-24  ...                            93
+8  2026-07-25  ...                            95
+9  2026-07-26  ...                            94
+10 2026-07-27  ...                            93
+11 2026-07-28  ...                            95
+12 2026-07-29  ...                            91
+13 2026-07-30  ...                            92
+
+[14 rows x 5 columns]
+[2026-07-30 16:17:44.088998] Scheduled update started.
+Inserted reading for 2026-07-30: PM2.5=38.37
+Logged prediction for 2026-07-31: PM2.5=31.2, AQI=53
+[2026-07-30 16:17:46.154677] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-17  ...                            95
+1  2026-07-18  ...                            96
+2  2026-07-19  ...                            93
+3  2026-07-20  ...                            94
+4  2026-07-21  ...                            96
+5  2026-07-22  ...                            91
+6  2026-07-23  ...                            91
+7  2026-07-24  ...                            93
+8  2026-07-25  ...                            95
+9  2026-07-26  ...                            94
+10 2026-07-27  ...                            93
+11 2026-07-28  ...                            95
+12 2026-07-29  ...                            91
+13 2026-07-30  ...                            92
+
+[14 rows x 5 columns]
+[2026-07-30 16:35:02.446507] Scheduled update started.
+Inserted reading for 2026-07-30: PM2.5=38.37
+Logged prediction for 2026-07-31: PM2.5=31.2, AQI=53
+[2026-07-30 16:35:04.476526] Update completed successfully.
+Traceback (most recent call last):
+  File "D:\VISHNU\PROJECTALPHA\CLOCK.py", line 2, in <module>
+    from DATABASE import daily_update
+  File "D:\VISHNU\PROJECTALPHA\DATABASE.py", line 6, in <module>
+    from CALL import fetch, parse, get_recent
+  File "D:\VISHNU\PROJECTALPHA\CALL.py", line 34, in <module>
+    print(get_recent(parse(fetch())))
+  File "D:\VISHNU\PROJECTALPHA\CALL.py", line 18, in parse
+    "date": data["daily"]["time"],
+KeyError: 'daily'
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-18  ...                            96
+1  2026-07-19  ...                            93
+2  2026-07-20  ...                            94
+3  2026-07-21  ...                            96
+4  2026-07-22  ...                            91
+5  2026-07-23  ...                            91
+6  2026-07-24  ...                            93
+7  2026-07-25  ...                            95
+8  2026-07-26  ...                            94
+9  2026-07-27  ...                            93
+10 2026-07-28  ...                            95
+11 2026-07-29  ...                            91
+12 2026-07-30  ...                            92
+13 2026-07-31  ...                            92
+
+[14 rows x 5 columns]
+[2026-07-31 13:34:04.791358] Scheduled update started.
+Inserted reading for 2026-07-31: PM2.5=23.08
+Logged prediction for 2026-08-01: PM2.5=39.6, AQI=67
+Updated actuals for 2026-07-31: PM2.5=23.08, AQI=38
+[2026-07-31 13:34:12.932504] Update completed successfully.
+Traceback (most recent call last):
+  File "D:\VISHNU\PROJECTALPHA\CLOCK.py", line 2, in <module>
+    from DATABASE import daily_update
+  File "D:\VISHNU\PROJECTALPHA\DATABASE.py", line 6, in <module>
+    from CALL import fetch, parse, get_recent
+  File "D:\VISHNU\PROJECTALPHA\CALL.py", line 34, in <module>
+    print(get_recent(parse(fetch())))
+  File "D:\VISHNU\PROJECTALPHA\CALL.py", line 18, in parse
+    "date": data["daily"]["time"],
+KeyError: 'daily'
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-19  ...                            93
+1  2026-07-20  ...                            94
+2  2026-07-21  ...                            96
+3  2026-07-22  ...                            91
+4  2026-07-23  ...                            91
+5  2026-07-24  ...                            93
+6  2026-07-25  ...                            95
+7  2026-07-26  ...                            94
+8  2026-07-27  ...                            93
+9  2026-07-28  ...                            95
+10 2026-07-29  ...                            91
+11 2026-07-30  ...                            92
+12 2026-07-31  ...                            92
+13 2026-08-01  ...                            89
+
+[14 rows x 5 columns]
+[2026-08-01 10:06:01.401060] Scheduled update started.
+Inserted reading for 2026-08-01: PM2.5=16.86
+Logged prediction for 2026-08-02: PM2.5=29.8, AQI=50
+Updated actuals for 2026-08-01: PM2.5=16.86, AQI=28
+[2026-08-01 10:06:04.035905] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-19  ...                            93
+1  2026-07-20  ...                            94
+2  2026-07-21  ...                            96
+3  2026-07-22  ...                            91
+4  2026-07-23  ...                            91
+5  2026-07-24  ...                            93
+6  2026-07-25  ...                            95
+7  2026-07-26  ...                            94
+8  2026-07-27  ...                            93
+9  2026-07-28  ...                            95
+10 2026-07-29  ...                            91
+11 2026-07-30  ...                            92
+12 2026-07-31  ...                            92
+13 2026-08-01  ...                            89
+
+[14 rows x 5 columns]
+[2026-08-01 10:07:01.352528] Scheduled update started.
+Inserted reading for 2026-08-01: PM2.5=16.86
+Logged prediction for 2026-08-02: PM2.5=29.8, AQI=50
+[2026-08-01 10:07:03.480082] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-19  ...                            93
+1  2026-07-20  ...                            94
+2  2026-07-21  ...                            96
+3  2026-07-22  ...                            91
+4  2026-07-23  ...                            91
+5  2026-07-24  ...                            93
+6  2026-07-25  ...                            95
+7  2026-07-26  ...                            94
+8  2026-07-27  ...                            93
+9  2026-07-28  ...                            95
+10 2026-07-29  ...                            91
+11 2026-07-30  ...                            92
+12 2026-07-31  ...                            92
+13 2026-08-01  ...                            90
+
+[14 rows x 5 columns]
+[2026-08-01 20:03:57.106681] Scheduled update started.
+Inserted reading for 2026-08-01: PM2.5=2.8
+Logged prediction for 2026-08-02: PM2.5=29.8, AQI=50
+[2026-08-01 20:04:06.643303] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-20  ...                            94
+1  2026-07-21  ...                            96
+2  2026-07-22  ...                            91
+3  2026-07-23  ...                            91
+4  2026-07-24  ...                            93
+5  2026-07-25  ...                            95
+6  2026-07-26  ...                            94
+7  2026-07-27  ...                            93
+8  2026-07-28  ...                            95
+9  2026-07-29  ...                            91
+10 2026-07-30  ...                            92
+11 2026-07-31  ...                            92
+12 2026-08-01  ...                            90
+13 2026-08-02  ...                            87
+
+[14 rows x 5 columns]
+[2026-08-02 10:07:03.105637] Scheduled update started.
+Inserted reading for 2026-08-02: PM2.5=26.01
+Logged prediction for 2026-08-03: PM2.5=23.4, AQI=39
+Updated actuals for 2026-08-02: PM2.5=26.01, AQI=43
+[2026-08-02 10:07:05.596993] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-21  ...                            96
+1  2026-07-22  ...                            91
+2  2026-07-23  ...                            91
+3  2026-07-24  ...                            93
+4  2026-07-25  ...                            95
+5  2026-07-26  ...                            94
+6  2026-07-27  ...                            93
+7  2026-07-28  ...                            95
+8  2026-07-29  ...                            91
+9  2026-07-30  ...                            92
+10 2026-07-31  ...                            92
+11 2026-08-01  ...                            90
+12 2026-08-02  ...                            91
+13 2026-08-03  ...                            93
+
+[14 rows x 5 columns]
+[2026-08-03 10:07:03.292530] Scheduled update started.
+Inserted reading for 2026-08-02: PM2.5=26.01
+Logged prediction for 2026-08-04: PM2.5=23.4, AQI=39
+[2026-08-03 10:07:05.892458] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-21  ...                            96
+1  2026-07-22  ...                            91
+2  2026-07-23  ...                            91
+3  2026-07-24  ...                            93
+4  2026-07-25  ...                            95
+5  2026-07-26  ...                            94
+6  2026-07-27  ...                            93
+7  2026-07-28  ...                            95
+8  2026-07-29  ...                            91
+9  2026-07-30  ...                            92
+10 2026-07-31  ...                            92
+11 2026-08-01  ...                            90
+12 2026-08-02  ...                            91
+13 2026-08-03  ...                            93
+
+[14 rows x 5 columns]
+[2026-08-03 10:28:42.529624] Scheduled update started.
+Inserted reading for 2026-08-02: PM2.5=26.01
+Logged prediction for 2026-08-04: PM2.5=23.4, AQI=39
+[2026-08-03 10:28:45.373060] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-22  ...                            91
+1  2026-07-23  ...                            91
+2  2026-07-24  ...                            93
+3  2026-07-25  ...                            95
+4  2026-07-26  ...                            94
+5  2026-07-27  ...                            93
+6  2026-07-28  ...                            95
+7  2026-07-29  ...                            91
+8  2026-07-30  ...                            92
+9  2026-07-31  ...                            92
+10 2026-08-01  ...                            90
+11 2026-08-02  ...                            91
+12 2026-08-03  ...                            92
+13 2026-08-04  ...                            91
+
+[14 rows x 5 columns]
+[2026-08-04 13:21:52.389169] Scheduled update started.
+Inserted reading for 2026-08-04: PM2.5=7.88
+Logged prediction for 2026-08-05: PM2.5=33.6, AQI=57
+Updated actuals for 2026-08-04: PM2.5=7.88, AQI=13
+[2026-08-04 13:22:01.607644] Update completed successfully.

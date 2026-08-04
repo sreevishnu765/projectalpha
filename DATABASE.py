@@ -48,7 +48,7 @@ def get_recent_readings():
     return df
 
 def fetch_pm25():
-    location_id = 3409484
+    location_id = 3409484 
     url = f"https://api.openaq.org/v3/locations/{location_id}/latest"
     headers = {"X-API-Key": OPENAQ_TOKEN}
     response = requests.get(url, headers=headers)
