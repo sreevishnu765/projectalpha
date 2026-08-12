@@ -1,10 +1,19 @@
-import sqlite3
-import pandas as pd
+import os
+import json
+import requests
+from dotenv import load_dotenv
 
-conn = sqlite3.connect("alpha_data.db")   # replace with your database filename
+load_dotenv()
+headers = {"X-API-Key": os.getenv("OPENAQ_TOKEN")}
 
-df = pd.read_sql_query("SELECT * FROM daily_readings;", conn)   # replace daily_data with your table name
+location_id = 6945  # Kurla MPCB
+pm25_sensor_ids = [12235834, 19978]
 
-print(df)
+resp = requests.get(f"https://api.openaq.org/v3/locations/{location_id}/sensors", headers=headers)
+data = resp.json()
 
-conn.close()
+for sensor in data["results"]:
+    if sensor["id"] in pm25_sensor_ids:
+        print(f"--- sensorsId={sensor['id']} ---")
+        print(json.dumps(sensor, indent=2))
+        print()

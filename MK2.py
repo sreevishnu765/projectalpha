@@ -1,6 +1,7 @@
 import pandas as pd
 from DATA import data_prep
 import numpy as np
+import joblib
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
@@ -66,3 +67,9 @@ def build_and_train_lstm(X_train, y_train, X_val, y_val, horizon_name):
 model_lstm_day1, rmse1, mae1, mape1 = build_and_train_lstm(X_train_scaled, y1_train, X_val_scaled, y1_val, "Day+1")
 model_lstm_day2, rmse2, mae2, mape2 = build_and_train_lstm(X_train_scaled, y2_train, X_val_scaled, y2_val, "Day+2")
 model_lstm_day3, rmse3, mae3, mape3 = build_and_train_lstm(X_train_scaled, y3_train, X_val_scaled, y3_val, "Day+3")
+
+# save models + scaler (needed by FORECAST.py for live predictions)
+model_lstm_day1.save("model_lstm_day1.keras")
+model_lstm_day2.save("model_lstm_day2.keras")
+model_lstm_day3.save("model_lstm_day3.keras")
+joblib.dump(scaler, "lstm_scaler.pkl")

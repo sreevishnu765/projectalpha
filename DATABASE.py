@@ -48,13 +48,13 @@ def get_recent_readings():
     return df
 
 def fetch_pm25():
-    location_id = 3409484 
+    location_id = 6945  # Kurla, Mumbai - MPCB (verified against weather coords 19.0863, 72.8888)
     url = f"https://api.openaq.org/v3/locations/{location_id}/latest"
     headers = {"X-API-Key": OPENAQ_TOKEN}
     response = requests.get(url, headers=headers)
     data = response.json()
     for result in data["results"]:
-        if result["sensorsId"] == 12238393:
+        if result["sensorsId"] == 12235834:  # active pm25 sensor, data through 2026-07-29
             return result["datetime"]["local"], result["value"]
     return None, None
 
