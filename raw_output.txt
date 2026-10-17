@@ -526,3 +526,1476 @@ Inserted reading for 2026-08-12: PM2.5=34.8
 Logged prediction for 2026-08-13: PM2.5=29.2, AQI=49
 Updated actuals for 2026-08-12: PM2.5=34.8, AQI=59
 [2026-08-12 10:07:13.003308] Update completed successfully.
+Traceback (most recent call last):
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Program Files\Python38\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000203DFEE8E50>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python38\lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "C:\Program Files\Python38\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000203DFEE8E50>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\VISHNU\PROJECTALPHA\CLOCK.py", line 2, in <module>
+    from DATABASE import daily_update
+  File "D:\VISHNU\PROJECTALPHA\DATABASE.py", line 6, in <module>
+    from CALL import fetch, parse, get_recent
+  File "D:\VISHNU\PROJECTALPHA\CALL.py", line 34, in <module>
+    print(get_recent(parse(fetch())))
+  File "D:\VISHNU\PROJECTALPHA\CALL.py", line 12, in fetch
+    response = requests.get(url, params = params)
+  File "C:\Program Files\Python38\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Program Files\Python38\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Program Files\Python38\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Program Files\Python38\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Program Files\Python38\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000203DFEE8E50>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+         date  ...  relative_humidity_2m_max (%)
+0  2026-07-31  ...                            92
+1  2026-08-01  ...                            90
+2  2026-08-02  ...                            91
+3  2026-08-03  ...                            92
+4  2026-08-04  ...                            91
+5  2026-08-05  ...                            93
+6  2026-08-06  ...                            94
+7  2026-08-07  ...                            89
+8  2026-08-08  ...                            89
+9  2026-08-09  ...                            88
+10 2026-08-10  ...                            92
+11 2026-08-11  ...                            93
+12 2026-08-12  ...                            91
+13 2026-08-13  ...                            89
+
+[14 rows x 5 columns]
+[2026-08-13 16:18:51.413151] Scheduled update started.
+Inserted reading for 2026-08-13: PM2.5=13.29
+Logged prediction for 2026-08-14: PM2.5=41.9, AQI=70
+Updated actuals for 2026-08-13: PM2.5=13.29, AQI=22
+[2026-08-13 16:19:00.853012] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-08-01  ...                            90
+1  2026-08-02  ...                            91
+2  2026-08-03  ...                            92
+3  2026-08-04  ...                            91
+4  2026-08-05  ...                            93
+5  2026-08-06  ...                            94
+6  2026-08-07  ...                            89
+7  2026-08-08  ...                            89
+8  2026-08-09  ...                            88
+9  2026-08-10  ...                            92
+10 2026-08-11  ...                            93
+11 2026-08-12  ...                            91
+12 2026-08-13  ...                            89
+13 2026-08-14  ...                            91
+
+[14 rows x 5 columns]
+[2026-08-14 11:27:34.713010] Scheduled update started.
+Inserted reading for 2026-08-14: PM2.5=22.0
+Logged prediction for 2026-08-15: PM2.5=30.9, AQI=52
+Updated actuals for 2026-08-14: PM2.5=22.0, AQI=37
+[2026-08-14 11:27:41.072756] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-08-01  ...                            90
+1  2026-08-02  ...                            91
+2  2026-08-03  ...                            92
+3  2026-08-04  ...                            91
+4  2026-08-05  ...                            93
+5  2026-08-06  ...                            94
+6  2026-08-07  ...                            89
+7  2026-08-08  ...                            89
+8  2026-08-09  ...                            88
+9  2026-08-10  ...                            92
+10 2026-08-11  ...                            93
+11 2026-08-12  ...                            91
+12 2026-08-13  ...                            89
+13 2026-08-14  ...                            91
+
+[14 rows x 5 columns]
+[2026-08-14 11:28:27.117877] Scheduled update started.
+Inserted reading for 2026-08-14: PM2.5=22.0
+Logged prediction for 2026-08-15: PM2.5=30.9, AQI=52
+[2026-08-14 11:28:38.978163] Update completed successfully.
+         date  ...  relative_humidity_2m_max (%)
+0  2026-08-02  ...                            91
+1  2026-08-03  ...                            92
+2  2026-08-04  ...                            91
+3  2026-08-05  ...                            93
+4  2026-08-06  ...                            94
+5  2026-08-07  ...                            89
+6  2026-08-08  ...                            89
+7  2026-08-09  ...                            88
+8  2026-08-10  ...                            92
+9  2026-08-11  ...                            93
+10 2026-08-12  ...                            91
+11 2026-08-13  ...                            89
+12 2026-08-14  ...                            91
+13 2026-08-15  ...                            93
+
+[14 rows x 5 columns]
+[2026-08-15 10:07:03.729009] Scheduled update started.
+Inserted reading for 2026-08-15: PM2.5=4.4
+Logged prediction for 2026-08-16: PM2.5=36.3, AQI=61
+Updated actuals for 2026-08-15: PM2.5=4.4, AQI=7
+[2026-08-15 10:07:05.929321] Update completed successfully.
+[2026-08-15 13:02:03.262873] Scheduled update started.
+Inserted reading for 2026-08-15: PM2.5=4.4
+Logged prediction for 2026-08-16: PM2.5=36.3, AQI=61
+[2026-08-15 13:02:07.448264] Update completed successfully.
+[2026-08-16 11:57:57.488799] Scheduled update started.
+[2026-08-16 11:57:57.512984] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000015D5DB928E0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-16 21:05:01.654043] Scheduled update started.
+Inserted reading for 2026-08-16: PM2.5=19.6
+Logged prediction for 2026-08-17: PM2.5=26.1, AQI=44
+Updated actuals for 2026-08-16: PM2.5=19.6, AQI=33
+[2026-08-16 21:05:05.387507] Update completed successfully.
+[2026-08-18 08:58:24.422789] Scheduled update started.
+Inserted reading for 2026-08-18: PM2.5=27.6
+Logged prediction for 2026-08-19: PM2.5=32.9, AQI=56
+[2026-08-18 08:58:41.006812] Update completed successfully.
+[2026-08-18 09:19:55.931055] Scheduled update started.
+Inserted reading for 2026-08-18: PM2.5=27.6
+Logged prediction for 2026-08-19: PM2.5=32.9, AQI=56
+[2026-08-18 09:20:05.597441] Update completed successfully.
+[2026-08-18 14:45:42.630882] Scheduled update started.
+[2026-08-18 14:45:42.699455] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000027F97EE28E0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-19 10:35:58.655247] Scheduled update started.
+[2026-08-19 10:35:58.681160] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000218737538E0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-19 12:17:39.731036] Scheduled update started.
+Inserted reading for 2026-08-19: PM2.5=25.6
+Logged prediction for 2026-08-20: PM2.5=34.1, AQI=58
+Updated actuals for 2026-08-19: PM2.5=25.6, AQI=43
+[2026-08-19 12:17:43.005837] Update completed successfully.
+[2026-08-20 10:07:04.210519] Scheduled update started.
+Inserted reading for 2026-08-20: PM2.5=10.8
+Logged prediction for 2026-08-21: PM2.5=36.8, AQI=62
+Updated actuals for 2026-08-20: PM2.5=10.8, AQI=18
+[2026-08-20 10:07:08.330976] Update completed successfully.
+[2026-08-21 10:59:17.201281] Scheduled update started.
+[2026-08-21 10:59:49.225693] Update failed: HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/6945/latest (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016E5EBA4190>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-21 11:01:30.158769] Scheduled update started.
+Inserted reading for 2026-08-21: PM2.5=20.0
+Logged prediction for 2026-08-22: PM2.5=29.1, AQI=48
+Updated actuals for 2026-08-21: PM2.5=20.0, AQI=33
+[2026-08-21 11:02:18.825553] Update completed successfully.
+[2026-08-22 10:07:02.784693] Scheduled update started.
+Inserted reading for 2026-08-22: PM2.5=11.61
+Logged prediction for 2026-08-23: PM2.5=39.2, AQI=66
+Updated actuals for 2026-08-22: PM2.5=11.61, AQI=19
+[2026-08-22 10:07:06.425689] Update completed successfully.
+[2026-08-23 16:38:58.574297] Scheduled update started.
+Inserted reading for 2026-08-23: PM2.5=34.4
+Logged prediction for 2026-08-24: PM2.5=26.6, AQI=44
+[2026-08-23 16:39:04.834337] Update completed successfully.
+2026-08-24 16:23:52.694848: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[2026-08-24 16:23:44.115091] Scheduled update started.
+Inserted reading for 2026-08-24: PM2.5=27.6
+Logged predictions for 2026-08-25: MK2=75, MK6=53, MK7=78
+Updated actuals for 2026-08-24: PM2.5=27.6, AQI=46
+[2026-08-24 16:23:58.391112] Update completed successfully.
+[2026-08-25 10:07:05.190994] Scheduled update started.
+[2026-08-25 10:07:05.199502] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EC85CF4910>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+2026-08-25 16:24:39.166931: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[2026-08-25 16:24:34.390517] Scheduled update started.
+Inserted reading for 2026-08-25: PM2.5=31.6
+Logged predictions for 2026-08-26: MK2=78, MK6=55, MK7=75
+[2026-08-25 16:24:42.565487] Update completed successfully.
+[2026-08-25 16:35:31.975212] Scheduled update started.
+Inserted reading for 2026-08-25: PM2.5=31.6
+Raw log: 2026-08-25 @ 2026-08-25T13:45:00+05:30 -> PM2.5=31.6, AQI=53
+Admin forecast for 2026-08-26 already logged today - skipping
+[2026-08-25 16:35:34.569081] Update completed successfully.
+[2026-08-25 22:31:43.875356] Scheduled update started.
+Inserted reading for 2026-08-25: PM2.5=26.0
+Raw log: 2026-08-25 @ 2026-08-25T19:45:00+05:30 -> PM2.5=26.0, AQI=43
+Admin forecast for 2026-08-26 already logged today - skipping
+[2026-08-25 22:32:08.591999] Update completed successfully.
+[2026-08-26 10:45:50.149882] Scheduled update started.
+[2026-08-26 10:45:50.149882] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B7FEB549D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+2026-08-26 10:57:09.860353: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[2026-08-26 10:56:47.475360] Scheduled update started.
+Inserted reading for 2026-08-26: PM2.5=29.2
+Raw log: 2026-08-26 @ 2026-08-26T09:15:00+05:30 -> PM2.5=29.2, AQI=49
+Admin forecast logged for 2026-08-27: MK2=78, MK6=54, MK7=84
+[2026-08-26 10:57:15.557510] Update completed successfully.
+[2026-08-26 16:07:05.183362] Scheduled update started.
+Inserted reading for 2026-08-26: PM2.5=27.6
+Raw log: 2026-08-26 @ 2026-08-26T13:15:00+05:30 -> PM2.5=27.6, AQI=46
+Admin forecast for 2026-08-27 already logged today - skipping
+[2026-08-26 16:07:07.531713] Update completed successfully.
+[2026-08-26 22:07:03.749564] Scheduled update started.
+Inserted reading for 2026-08-26: PM2.5=25.43
+Raw log: 2026-08-26 @ 2026-08-26T19:00:00+05:30 -> PM2.5=25.43, AQI=42
+Admin forecast for 2026-08-27 already logged today - skipping
+[2026-08-26 22:07:07.050216] Update completed successfully.
+2026-08-27 10:07:26.384919: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[2026-08-27 10:07:05.183904] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast logged for 2026-08-28: MK2=75, MK6=53, MK7=303
+Finalized 2026-08-26: day_avg_aqi=46.0, n_readings=3
+[2026-08-27 10:07:31.767673] Update completed successfully.
+[2026-08-27 16:07:02.425492] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-08-28 already logged today - skipping
+[2026-08-27 16:07:05.166645] Update completed successfully.
+[2026-08-27 22:07:05.575018] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-08-28 already logged today - skipping
+[2026-08-27 22:07:09.804820] Update completed successfully.
+[2026-08-28 10:20:49.045166] Scheduled update started.
+[2026-08-28 10:20:49.045166] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001D1363849D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-28 11:32:08.045024] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast logged for 2026-08-29: MK2=None, MK6=53, MK7=303
+Finalized 2026-08-27: day_avg_aqi=29.0, n_readings=4
+[2026-08-28 11:32:31.970657] Update completed successfully.
+[2026-08-28 16:07:05.130161] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-08-29 already logged today - skipping
+[2026-08-28 16:07:07.314127] Update completed successfully.
+[2026-08-28 22:07:04.281880] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-08-29 already logged today - skipping
+[2026-08-28 22:07:06.932036] Update completed successfully.
+[2026-08-29 10:07:03.525009] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast logged for 2026-08-30: MK2=None, MK6=53, MK7=303
+[2026-08-29 10:07:25.203512] Update completed successfully.
+[2026-08-29 16:07:05.548649] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-08-30 already logged today - skipping
+[2026-08-29 16:07:07.327977] Update completed successfully.
+[2026-08-29 22:07:05.997414] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-08-30 already logged today - skipping
+[2026-08-29 22:07:08.569097] Update completed successfully.
+[2026-08-30 12:57:46.770223] Scheduled update started.
+[2026-08-30 12:57:46.778233] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023D163C59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-30 16:07:05.346726] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast logged for 2026-08-31: MK2=None, MK6=53, MK7=303
+[2026-08-30 16:07:28.427775] Update completed successfully.
+[2026-08-30 22:07:06.308815] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-08-31 already logged today - skipping
+[2026-08-30 22:07:11.910799] Update completed successfully.
+[2026-08-31 16:15:52.674725] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast logged for 2026-09-01: MK2=None, MK6=53, MK7=303
+[2026-08-31 16:16:25.957756] Update completed successfully.
+[2026-08-31 22:07:03.593144] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-09-01 already logged today - skipping
+[2026-08-31 22:07:06.260009] Update completed successfully.
+[2026-09-01 13:21:33.708507] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast logged for 2026-09-02: MK2=None, MK6=53, MK7=303
+[2026-09-01 13:21:57.118926] Update completed successfully.
+[2026-09-01 16:07:04.224701] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-09-02 already logged today - skipping
+[2026-09-01 16:07:06.560110] Update completed successfully.
+[2026-09-01 22:07:02.352341] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-09-02 already logged today - skipping
+[2026-09-01 22:07:04.882150] Update completed successfully.
+[2026-09-02 15:13:39.532489] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast logged for 2026-09-03: MK2=None, MK6=53, MK7=303
+[2026-09-02 15:14:03.792520] Update completed successfully.
+[2026-09-02 16:07:04.643083] Scheduled update started.
+Inserted reading for 2026-08-27: PM2.5=17.6
+Raw log: 2026-08-27 @ 2026-08-27T07:45:00+05:30 -> PM2.5=17.6, AQI=29
+Admin forecast for 2026-09-03 already logged today - skipping
+[2026-09-02 16:07:06.994991] Update completed successfully.
+[2026-09-02 22:07:06.392811] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast for 2026-09-03 already logged today - skipping
+Finalized 2026-08-29: day_avg_aqi=25.0, n_readings=1
+[2026-09-02 22:07:09.667767] Update completed successfully.
+[2026-09-03 15:36:19.392735] Scheduled update started.
+[2026-09-03 15:36:19.408360] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029A76EA59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-03 16:07:02.799333] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast logged for 2026-09-04: MK2=None, MK6=46, MK7=78
+[2026-09-03 16:07:36.569248] Update completed successfully.
+[2026-09-03 22:07:02.254028] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast for 2026-09-04 already logged today - skipping
+[2026-09-03 22:07:04.435203] Update completed successfully.
+[2026-09-04 13:05:47.158806] Scheduled update started.
+[2026-09-04 13:05:47.166810] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001555F7259D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-04 13:23:09.039079] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast logged for 2026-09-05: MK2=None, MK6=46, MK7=78
+[2026-09-04 13:23:32.403480] Update completed successfully.
+[2026-09-04 16:07:06.301907] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast for 2026-09-05 already logged today - skipping
+[2026-09-04 16:07:08.602205] Update completed successfully.
+[2026-09-04 22:07:02.241080] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast for 2026-09-05 already logged today - skipping
+[2026-09-04 22:07:05.782621] Update completed successfully.
+[2026-09-05 10:15:49.641095] Scheduled update started.
+[2026-09-05 10:15:49.641095] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001DC2CDE59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-05 16:07:07.052953] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast logged for 2026-09-06: MK2=None, MK6=43, MK7=78
+[2026-09-05 16:07:29.799101] Update completed successfully.
+[2026-09-05 22:07:04.022845] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast for 2026-09-06 already logged today - skipping
+[2026-09-05 22:07:09.682697] Update completed successfully.
+[2026-09-06 11:51:12.573613] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast logged for 2026-09-07: MK2=None, MK6=43, MK7=78
+[2026-09-06 11:51:26.182032] Update completed successfully.
+[2026-09-06 16:07:05.582478] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast for 2026-09-07 already logged today - skipping
+[2026-09-06 16:07:07.522029] Update completed successfully.
+[2026-09-06 22:07:02.220901] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast for 2026-09-07 already logged today - skipping
+[2026-09-06 22:07:04.632670] Update completed successfully.
+[2026-09-07 17:02:05.221378] Scheduled update started.
+[2026-09-07 17:02:05.247799] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001DD3C6759D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-07 22:07:06.180461] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast logged for 2026-09-08: MK2=None, MK6=43, MK7=78
+[2026-09-07 22:07:25.424279] Update completed successfully.
+[2026-09-08 17:02:21.060116] Scheduled update started.
+[2026-09-08 17:02:21.070170] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019FFD0159D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-08 22:07:05.631313] Scheduled update started.
+Inserted reading for 2026-08-29: PM2.5=15.2
+Raw log: 2026-08-29 @ 2026-08-29T03:30:00+05:30 -> PM2.5=15.2, AQI=25
+Admin forecast logged for 2026-09-09: MK2=None, MK6=43, MK7=78
+[2026-09-08 22:07:26.990665] Update completed successfully.
+[2026-09-09 12:46:56.085714] Scheduled update started.
+Inserted reading for 2026-09-08: PM2.5=23.2
+Raw log: 2026-09-08 @ 2026-09-08T20:00:00+05:30 -> PM2.5=23.2, AQI=39
+Admin forecast logged for 2026-09-10: MK2=None, MK6=60, MK7=83
+Finalized 2026-09-08: day_avg_aqi=39.0, n_readings=1
+[2026-09-09 12:47:19.708006] Update completed successfully.
+[2026-09-09 16:07:03.370030] Scheduled update started.
+Inserted reading for 2026-09-08: PM2.5=23.2
+Raw log: 2026-09-08 @ 2026-09-08T20:00:00+05:30 -> PM2.5=23.2, AQI=39
+Admin forecast for 2026-09-10 already logged today - skipping
+[2026-09-09 16:07:05.244390] Update completed successfully.
+[2026-09-10 10:39:10.088452] Scheduled update started.
+[2026-09-10 10:39:10.128359] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024CFE7F59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-10 15:04:38.478133] Scheduled update started.
+Inserted reading for 2026-09-08: PM2.5=23.2
+Raw log: 2026-09-08 @ 2026-09-08T20:00:00+05:30 -> PM2.5=23.2, AQI=39
+Admin forecast logged for 2026-09-11: MK2=None, MK6=58, MK7=80
+[2026-09-10 15:05:06.753946] Update completed successfully.
+[2026-09-10 16:07:05.478758] Scheduled update started.
+Inserted reading for 2026-09-08: PM2.5=23.2
+Raw log: 2026-09-08 @ 2026-09-08T20:00:00+05:30 -> PM2.5=23.2, AQI=39
+Admin forecast for 2026-09-11 already logged today - skipping
+[2026-09-10 16:07:07.744879] Update completed successfully.
+[2026-09-10 22:35:05.829820] Scheduled update started.
+Inserted reading for 2026-09-08: PM2.5=23.2
+Raw log: 2026-09-08 @ 2026-09-08T20:00:00+05:30 -> PM2.5=23.2, AQI=39
+Admin forecast for 2026-09-11 already logged today - skipping
+[2026-09-10 22:35:08.238945] Update completed successfully.
+[2026-09-11 10:07:05.554832] Scheduled update started.
+Inserted reading for 2026-09-08: PM2.5=23.2
+Raw log: 2026-09-08 @ 2026-09-08T20:00:00+05:30 -> PM2.5=23.2, AQI=39
+Admin forecast logged for 2026-09-12: MK2=None, MK6=41, MK7=77
+[2026-09-11 10:07:25.654068] Update completed successfully.
+[2026-09-12 11:42:46.012335] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast logged for 2026-09-13: MK2=None, MK6=54, MK7=83
+Finalized 2026-09-11: day_avg_aqi=42.0, n_readings=1
+[2026-09-12 11:43:40.497776] Update completed successfully.
+[2026-09-12 16:07:07.215847] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast for 2026-09-13 already logged today - skipping
+[2026-09-12 16:07:09.266228] Update completed successfully.
+[2026-09-12 22:48:13.033304] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast for 2026-09-13 already logged today - skipping
+[2026-09-12 22:48:14.597867] Update completed successfully.
+[2026-09-13 10:07:06.193271] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast logged for 2026-09-14: MK2=None, MK6=53, MK7=83
+[2026-09-13 10:07:27.175923] Update completed successfully.
+[2026-09-13 16:07:04.056743] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast for 2026-09-14 already logged today - skipping
+[2026-09-13 16:07:06.368724] Update completed successfully.
+[2026-09-14 09:00:16.965085] Scheduled update started.
+[2026-09-14 09:00:16.996390] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001AB91AC59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-14 10:07:02.739489] Scheduled update started.
+[2026-09-14 10:07:02.755116] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001F0AD4059D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-14 11:58:00.229727] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast logged for 2026-09-15: MK2=None, MK6=53, MK7=83
+[2026-09-14 11:58:21.413498] Update completed successfully.
+[2026-09-14 17:00:40.689085] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast for 2026-09-15 already logged today - skipping
+[2026-09-14 17:00:43.249138] Update completed successfully.
+[2026-09-14 22:07:06.248376] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast for 2026-09-15 already logged today - skipping
+[2026-09-14 22:07:10.588076] Update completed successfully.
+[2026-09-15 10:17:17.639743] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast logged for 2026-09-16: MK2=None, MK6=53, MK7=83
+[2026-09-15 10:17:42.063469] Update completed successfully.
+[2026-09-16 01:13:51.170738] Scheduled update started.
+[2026-09-16 01:13:54.447099] Update failed: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+[2026-09-16 01:42:24.363458] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast logged for 2026-09-17: MK2=None, MK6=53, MK7=83
+[2026-09-16 01:42:58.495950] Update completed successfully.
+[2026-09-16 10:45:15.281228] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast for 2026-09-17 already logged today - skipping
+[2026-09-16 10:45:19.664842] Update completed successfully.
+[2026-09-16 16:59:25.015389] Scheduled update started.
+Inserted reading for 2026-09-11: PM2.5=25.2
+Raw log: 2026-09-11 @ 2026-09-11T16:00:00+05:30 -> PM2.5=25.2, AQI=42
+Admin forecast for 2026-09-17 already logged today - skipping
+[2026-09-16 16:59:27.499319] Update completed successfully.
+[2026-09-16 22:07:23.419007] Scheduled update started.
+[2026-09-16 22:07:23.565002] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B925AC59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-17 10:50:09.165149] Scheduled update started.
+Inserted reading for 2026-09-16: PM2.5=20.8
+Raw log: 2026-09-16 @ 2026-09-16T22:00:00+05:30 -> PM2.5=20.8, AQI=35
+Admin forecast logged for 2026-09-18: MK2=None, MK6=54, MK7=86
+Finalized 2026-09-16: day_avg_aqi=35.0, n_readings=1
+[2026-09-17 10:50:31.511969] Update completed successfully.
+[2026-09-17 16:53:31.798500] Scheduled update started.
+[2026-09-17 16:53:31.814158] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000141C6CB59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-17 22:23:40.257389] Scheduled update started.
+Inserted reading for 2026-09-16: PM2.5=20.8
+Raw log: 2026-09-16 @ 2026-09-16T22:00:00+05:30 -> PM2.5=20.8, AQI=35
+Admin forecast for 2026-09-18 already logged today - skipping
+[2026-09-17 22:23:42.708856] Update completed successfully.
+[2026-09-18 10:45:47.712592] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast logged for 2026-09-19: MK2=None, MK6=48, MK7=86
+Finalized 2026-09-17: day_avg_aqi=19.0, n_readings=1
+[2026-09-18 10:46:08.372609] Update completed successfully.
+[2026-09-18 16:07:04.994034] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast for 2026-09-19 already logged today - skipping
+[2026-09-18 16:07:07.227423] Update completed successfully.
+[2026-09-19 12:10:59.902169] Scheduled update started.
+[2026-09-19 12:10:59.902169] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016A02CB49D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-19 12:45:28.370613] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast logged for 2026-09-20: MK2=None, MK6=65, MK7=89
+[2026-09-19 12:45:47.786423] Update completed successfully.
+[2026-09-19 16:59:27.084604] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast for 2026-09-20 already logged today - skipping
+[2026-09-19 16:59:29.260669] Update completed successfully.
+[2026-09-19 22:07:03.227382] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast for 2026-09-20 already logged today - skipping
+[2026-09-19 22:07:06.468435] Update completed successfully.
+[2026-09-20 10:07:05.476574] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast logged for 2026-09-21: MK2=None, MK6=65, MK7=89
+[2026-09-20 10:07:25.501921] Update completed successfully.
+[2026-09-20 19:17:21.936329] Scheduled update started.
+[2026-09-20 19:17:21.960465] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020D1DBA59D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-20 22:07:02.026060] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast for 2026-09-21 already logged today - skipping
+[2026-09-20 22:07:04.702298] Update completed successfully.
+[2026-09-21 10:07:04.910672] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast logged for 2026-09-22: MK2=None, MK6=65, MK7=89
+[2026-09-21 10:07:25.928619] Update completed successfully.
+[2026-09-21 16:07:05.301955] Scheduled update started.
+Inserted reading for 2026-09-17: PM2.5=11.2
+Raw log: 2026-09-17 @ 2026-09-17T20:00:00+05:30 -> PM2.5=11.2, AQI=19
+Admin forecast for 2026-09-22 already logged today - skipping
+[2026-09-21 16:07:13.376050] Update completed successfully.
+[2026-09-22 08:00:36.591029] Scheduled update started.
+Inserted reading for 2026-09-21: PM2.5=16.0
+Raw log: 2026-09-21 @ 2026-09-21T21:00:00+05:30 -> PM2.5=16.0, AQI=27
+Admin forecast logged for 2026-09-23: MK2=None, MK6=35, MK7=288
+Finalized 2026-09-21: day_avg_aqi=27.0, n_readings=1
+[2026-09-22 08:00:56.318371] Update completed successfully.
+[2026-09-22 13:11:33.510202] Scheduled update started.
+[2026-09-22 13:11:33.536626] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0863&longitude=72.8888&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000253BCB659D0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-22 17:55:28.420865] Scheduled update started.
+Inserted reading for 2026-09-21: PM2.5=16.0
+Raw log: 2026-09-21 @ 2026-09-21T21:00:00+05:30 -> PM2.5=16.0, AQI=27
+Admin forecast for 2026-09-23 already logged today - skipping
+[2026-09-22 17:55:31.040859] Update completed successfully.
+[2026-09-22 22:07:03.832703] Scheduled update started.
+Inserted reading for 2026-09-21: PM2.5=16.0
+Raw log: 2026-09-21 @ 2026-09-21T21:00:00+05:30 -> PM2.5=16.0, AQI=27
+Admin forecast for 2026-09-23 already logged today - skipping
+[2026-09-22 22:07:06.962534] Update completed successfully.
+[2026-09-23 07:37:31.260069] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-21T15:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-09-24: MK2=None, MK6=52, MK7=289
+[2026-09-23 07:38:01.275816] Update completed successfully.
+[2026-09-23 14:34:35.102023] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-24 already logged today - skipping
+[2026-09-23 14:34:51.360266] Update completed successfully.
+[2026-09-23 16:07:03.550833] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-21T15:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-24 already logged today - skipping
+[2026-09-23 16:07:15.734323] Update completed successfully.
+[2026-09-23 22:07:05.368377] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+[2026-09-23 22:07:16.620949] Update failed: 'daily'
+[2026-09-24 13:51:24.368137] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-21T15:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-09-25: MK2=None, MK6=35, MK7=288
+[2026-09-24 13:52:15.524915] Update completed successfully.
+[2026-09-24 16:07:05.079878] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+[2026-09-24 16:07:10.097878] Update failed: 'daily'
+[2026-09-24 23:23:33.259149] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-21T15:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-25 already logged today - skipping
+[2026-09-24 23:23:44.767724] Update completed successfully.
+[2026-09-25 11:42:10.809664] Scheduled update started.
+fetch_pm25: request/parse error for Kurla (sensor 12235834): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: request/parse error for Powai (sensor 12235896): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-09-26: MK2=None, MK6=52, MK7=289
+[2026-09-25 11:45:17.660806] Update completed successfully.
+[2026-09-25 13:37:08.404620] Scheduled update started.
+[2026-09-25 13:37:09.069870] Update failed: 'daily'
+[2026-09-25 13:37:42.817728] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-26 already logged today - skipping
+[2026-09-25 13:37:53.694467] Update completed successfully.
+[2026-09-25 16:07:01.966653] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-26 already logged today - skipping
+[2026-09-25 16:07:18.498662] Update completed successfully.
+[2026-09-25 22:07:03.414708] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-26 already logged today - skipping
+[2026-09-25 22:07:29.571529] Update completed successfully.
+[2026-09-26 12:42:55.165316] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-09-27: MK2=None, MK6=52, MK7=289
+[2026-09-26 12:43:31.786380] Update completed successfully.
+[2026-09-26 16:07:05.281193] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+[2026-09-26 16:07:14.062809] Update failed: 'daily'
+[2026-09-26 22:07:06.177648] Scheduled update started.
+[2026-09-26 22:07:06.203135] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0728&longitude=72.8826&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000243D1F99D00>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-09-27 10:07:05.957480] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+[2026-09-27 10:07:15.706097] Update failed: 'daily'
+[2026-09-27 17:30:48.999011] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-09-28: MK2=None, MK6=52, MK7=289
+[2026-09-27 17:31:39.212084] Update completed successfully.
+[2026-09-27 22:22:33.215854] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-28 already logged today - skipping
+[2026-09-27 22:22:52.253941] Update completed successfully.
+[2026-09-28 10:07:05.686360] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+[2026-09-28 10:07:18.554083] Update failed: 'daily'
+[2026-09-28 19:33:23.115097] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-09-29: MK2=None, MK6=35, MK7=288
+[2026-09-28 19:34:08.412324] Update completed successfully.
+[2026-09-29 00:40:36.954359] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-09-30: MK2=None, MK6=52, MK7=289
+[2026-09-29 00:41:28.212098] Update completed successfully.
+[2026-09-29 12:29:15.286265] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-30 already logged today - skipping
+[2026-09-29 12:29:53.262847] Update completed successfully.
+[2026-09-29 17:32:31.378107] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-24T17:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-30 already logged today - skipping
+[2026-09-29 17:32:41.814252] Update completed successfully.
+[2026-09-29 22:39:40.702936] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-24T17:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-09-30 already logged today - skipping
+[2026-09-29 22:39:54.852925] Update completed successfully.
+[2026-09-30 12:20:24.279615] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-10-01: MK2=None, MK6=52, MK7=289
+[2026-09-30 12:20:55.415616] Update completed successfully.
+[2026-09-30 14:37:25.922288] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-10-01 already logged today - skipping
+[2026-09-30 14:38:29.523713] Update completed successfully.
+[2026-09-30 19:30:16.322732] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-10-01 already logged today - skipping
+[2026-09-30 19:31:18.186367] Update completed successfully.
+[2026-10-01 00:25:12.637208] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-09-15T01:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-10-02: MK2=None, MK6=52, MK7=289
+[2026-10-01 00:26:10.916023] Update completed successfully.
+[2026-10-01 15:52:17.228807] Scheduled update started.
+[2026-10-01 15:52:17.249752] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0728&longitude=72.8826&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B1DAFD9D00>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-10-01 16:07:06.256831] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+[2026-10-01 16:07:11.575481] Update failed: 'daily'
+[2026-10-02 09:54:10.251065] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-10-03: MK2=None, MK6=52, MK7=289
+[2026-10-02 09:58:46.320659] Update completed successfully.
+[2026-10-02 10:07:04.923249] Scheduled update started.
+[2026-10-02 10:07:12.366349] Update failed: 'daily'
+[2026-10-02 17:16:54.653505] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-09-29T14:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 20079 at 2022-10-16T13:15:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-09-29T14:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-10-03 already logged today - skipping
+[2026-10-02 17:17:09.223293] Update completed successfully.
+[2026-10-02 22:20:01.112451] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-10-01T07:30:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-10-02T08:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast for 2026-10-03 already logged today - skipping
+[2026-10-02 22:20:17.296561] Update completed successfully.
+[2026-10-03 11:42:31.967286] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-10-01T07:30:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-10-04: MK2=None, MK6=52, MK7=289
+[2026-10-03 11:43:03.874500] Update completed successfully.
+[2026-10-03 16:07:05.746563] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+[2026-10-03 16:07:12.793268] Update failed: 'daily'
+[2026-10-03 22:07:05.862080] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+[2026-10-03 22:07:11.220963] Update failed: 'daily'
+[2026-10-04 12:11:27.767124] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25: no measurement returned for sensor 12238567 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25: no measurement returned for sensor 12238384 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25: no measurement returned for sensor 12235896 at 2026-10-01T07:30:00Z
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-10-02T08:30:00Z
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-10-05: MK2=None, MK6=52, MK7=289
+[2026-10-04 12:12:18.303979] Update completed successfully.
+[2026-10-04 16:07:07.218176] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 19978 at 2022-10-31T02:00:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+[2026-10-04 16:07:10.941133] Update failed: 'daily'
+[2026-10-04 22:07:05.547770] Scheduled update started.
+fetch_pm25: no measurement returned for sensor 12235834 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25: no measurement returned for sensor 12238375 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25: no measurement returned for sensor 12235914 at 2026-10-02T08:30:00Z
+Failed to fetch PM2.5 for Worli - skipping update
+[2026-10-04 22:07:15.205440] Update failed: 'daily'
+[2026-10-06 13:07:10.371429] Scheduled update started.
+[2026-10-06 13:07:10.406074] Update failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=19.0728&longitude=72.8826&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000022EF7319D00>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-10-06 16:07:06.032625] Scheduled update started.
+Kurla: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.2
+Bandra Kurla Complex: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=68.12
+Worli: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=56.0
+Byculla: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=37.7
+Chembur: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.34
+Powai: stored 1 day(s); newest reading 2026-10-01T12:45:00 PM2.5=13.6
+fetch_pm25: no readings for Kurla in the last 3 days
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+prepare_live_features: newest Kurla reading is 4 days old - not forecasting
+Admin forecast for 2026-10-07: no fresh data to forecast from - nothing logged
+[2026-10-06 16:07:33.550682] Update finished - stations updated: 6/6
+[2026-10-06 22:07:03.477050] Scheduled update started.
+Kurla: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.2
+Bandra Kurla Complex: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=68.12
+Worli: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=56.0
+Byculla: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=37.7
+Chembur: stored 4 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.34
+Powai: stored 1 day(s); newest reading 2026-10-01T12:45:00 PM2.5=13.6
+fetch_pm25: no readings for Kurla in the last 3 days
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+prepare_live_features: newest Kurla reading is 4 days old - not forecasting
+Admin forecast for 2026-10-07: no fresh data to forecast from - nothing logged
+[2026-10-06 22:07:43.189538] Update finished - stations updated: 6/6
+[2026-10-07 13:47:50.812124] Scheduled update started.
+fetch_pm25_window: sensor lookup failed for Kurla (location_id=6945): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/6945 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014BD448BC40>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Kurla - skipping update
+fetch_pm25_window: sensor lookup failed for Bandra Kurla Complex (location_id=3409482): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409482 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014BD44AA730>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+fetch_pm25_window: sensor lookup failed for Worli (location_id=3409323): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409323 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014BD44B1100>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Worli - skipping update
+fetch_pm25_window: sensor lookup failed for Byculla (location_id=3409510): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409510 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014BD44B1AC0>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Byculla - skipping update
+fetch_pm25_window: sensor lookup failed for Chembur (location_id=3409483): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409483 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014BD44B18E0>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Chembur - skipping update
+fetch_pm25_window: sensor lookup failed for Powai (location_id=6956): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/6956 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014BD44AAF40>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Powai - skipping update
+fetch_pm25_window: sensor lookup failed for Kurla (location_id=6945): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/6945 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014BD44AA310>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+fetch_pm25: no readings for Kurla in the last 3 days
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+prepare_live_features: newest Kurla reading is 5 days old - not forecasting
+Admin forecast for 2026-10-08: no fresh data to forecast from - nothing logged
+[2026-10-07 13:47:50.912217] Update finished - stations updated: 0/6 (no new data: Kurla, Bandra Kurla Complex, Worli, Byculla, Chembur, Powai)
+[2026-10-07 16:07:03.211899] Scheduled update started.
+Kurla: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.2
+Weather fetch failed for Bandra Kurla Complex: Open-Meteo request failed after 3 attempts: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=19.0669&longitude=72.8686&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto - skipping update
+Worli: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=56.0
+Byculla: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=37.7
+Chembur: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.34
+Powai: stored 1 day(s); newest reading 2026-10-01T12:45:00 PM2.5=13.6
+fetch_pm25: no readings for Kurla in the last 3 days
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+prepare_live_features: newest Kurla reading is 5 days old - not forecasting
+Admin forecast for 2026-10-08: no fresh data to forecast from - nothing logged
+[2026-10-07 16:07:46.712545] Update finished - stations updated: 5/6 (no new data: Bandra Kurla Complex)
+[2026-10-07 22:07:03.330594] Scheduled update started.
+Kurla: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.2
+Bandra Kurla Complex: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=68.12
+Worli: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=56.0
+Byculla: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=37.7
+Chembur: stored 3 day(s); newest reading 2026-10-02T13:45:00 PM2.5=47.34
+Powai: stored 1 day(s); newest reading 2026-10-01T12:45:00 PM2.5=13.6
+fetch_pm25: no readings for Kurla in the last 3 days
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+prepare_live_features: newest Kurla reading is 5 days old - not forecasting
+Admin forecast for 2026-10-08: no fresh data to forecast from - nothing logged
+[2026-10-07 22:07:47.045701] Update finished - stations updated: 6/6
+[2026-10-08 10:07:03.162188] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-08T10:00:00 PM2.5=64.93232323232323
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-08T10:00:00 PM2.5=69.76464646464646
+Worli: stored 1 day(s); newest reading 2026-10-08T10:00:00 PM2.5=64.02626262626262
+Byculla: stored 1 day(s); newest reading 2026-10-08T10:00:00 PM2.5=61.30808080808081
+Chembur: stored 1 day(s); newest reading 2026-10-08T10:00:00 PM2.5=66.74444444444444
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+openaq: Powai sensor 12235896 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+openaq: Powai sensor 20079 failed: HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/sensors/20079/measurements?datetime_from=2026-10-01T04%3A38%3A27Z&limit=1000&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001DF5D977CD0>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Powai - skipping update
+Andheri: stored 1 day(s); newest reading 2026-10-08T10:00:00 PM2.5=69.46262626262626
+Raw log: 2026-10-08 @ 2026-10-08T10:00:00+05:30 -> PM2.5=64.93232323232323, AQI=117
+prepare_live_features: fewer than 4 consecutive recent days of Kurla data - not forecasting yet
+Admin forecast for 2026-10-09: no fresh data to forecast from - nothing logged
+[2026-10-08 10:08:56.112841] Update finished - stations updated: 6/7 (no new data: Powai)
+[2026-10-08 16:31:50.625248] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-08T16:00:00 PM2.5=109.12727272727273
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-08T16:00:00 PM2.5=40.4734693877551
+Worli: stored 1 day(s); newest reading 2026-10-08T16:00:00 PM2.5=40.4734693877551
+Byculla: stored 1 day(s); newest reading 2026-10-08T16:00:00 PM2.5=42.91428571428571
+Chembur: stored 1 day(s); newest reading 2026-10-08T16:00:00 PM2.5=39.2530612244898
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-07T19:30:00 PM2.5=13.6
+Andheri: stored 1 day(s); newest reading 2026-10-08T16:00:00 PM2.5=30.1
+Raw log: 2026-10-08 @ 2026-10-08T16:00:00+05:30 -> PM2.5=109.12727272727273, AQI=264
+prepare_live_features: fewer than 4 consecutive recent days of Kurla data - not forecasting yet
+Admin forecast for 2026-10-09: no fresh data to forecast from - nothing logged
+[2026-10-08 16:31:58.811859] Update finished - stations updated: 7/7
+[2026-10-08 22:07:05.052634] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-08T22:00:00 PM2.5=64.63030303030303
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-08T22:00:00 PM2.5=36.20204081632653
+Worli: stored 1 day(s); newest reading 2026-10-08T22:00:00 PM2.5=50.8469387755102
+Byculla: stored 1 day(s); newest reading 2026-10-08T22:00:00 PM2.5=44.744897959183675
+Chembur: stored 1 day(s); newest reading 2026-10-08T22:00:00 PM2.5=45.96530612244898
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-08T22:00:00 PM2.5=18.0
+Andheri: stored 1 day(s); newest reading 2026-10-08T22:00:00 PM2.5=53.897959183673464
+Raw log: 2026-10-08 @ 2026-10-08T22:00:00+05:30 -> PM2.5=64.63030303030303, AQI=116
+Admin forecast logged for 2026-10-09: MK6=148
+[2026-10-08 22:07:17.038768] Update finished - stations updated: 7/7
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                [2026-10-10 00:13:52.335664] Scheduled update started.
+Kurla: stored 5 day(s); newest reading 2026-10-07T19:45:00 PM2.5=70.8
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-10T00:00:00 PM2.5=38.642857142857146
+Worli: stored 1 day(s); newest reading 2026-10-10T00:00:00 PM2.5=28.2
+Byculla: stored 1 day(s); newest reading 2026-10-10T00:00:00 PM2.5=37.422448979591834
+Chembur: stored 1 day(s); newest reading 2026-10-10T00:00:00 PM2.5=50.23673469387755
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-10T00:00:00 PM2.5=46.57551020408164
+Andheri: stored 1 day(s); newest reading 2026-10-10T00:00:00 PM2.5=51.457142857142856
+Raw log: reading @ 2026-10-07T19:45:00+05:30 already logged - sensor hasn't reported anything new
+Admin forecast for 2026-10-11 already logged today - skipping
+[2026-10-10 00:14:07.540022] Update finished - stations updated: 7/7
+[2026-10-10 11:11:56.254360] Scheduled update started.
+Kurla: stored 5 day(s); newest reading 2026-10-07T19:45:00 PM2.5=70.8
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-10T11:00:00 PM2.5=44.13469387755102
+Worli: stored 1 day(s); newest reading 2026-10-10T11:00:00 PM2.5=34.371428571428574
+Byculla: stored 1 day(s); newest reading 2026-10-10T11:00:00 PM2.5=49.6265306122449
+Chembur: stored 1 day(s); newest reading 2026-10-10T11:00:00 PM2.5=50.8469387755102
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-10T11:00:00 PM2.5=60.704040404040406
+Andheri: stored 1 day(s); newest reading 2026-10-10T11:00:00 PM2.5=58.779591836734696
+Raw log: reading @ 2026-10-07T19:45:00+05:30 already logged - sensor hasn't reported anything new
+Admin forecast for 2026-10-11 already logged today - skipping
+[2026-10-10 11:12:08.614094] Update finished - stations updated: 7/7
+[2026-10-10 16:07:02.154064] Scheduled update started.
+Kurla: stored 5 day(s); newest reading 2026-10-07T19:45:00 PM2.5=70.8
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-10T16:00:00 PM2.5=33.76122448979592
+Worli: stored 1 day(s); newest reading 2026-10-10T16:00:00 PM2.5=15.0
+Byculla: stored 1 day(s); newest reading 2026-10-10T16:00:00 PM2.5=39.2530612244898
+Chembur: stored 1 day(s); newest reading 2026-10-10T16:00:00 PM2.5=39.2530612244898
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-10T16:00:00 PM2.5=40.4734693877551
+Andheri: stored 1 day(s); newest reading 2026-10-10T16:00:00 PM2.5=42.91428571428571
+Raw log: reading @ 2026-10-07T19:45:00+05:30 already logged - sensor hasn't reported anything new
+Admin forecast for 2026-10-11 already logged today - skipping
+[2026-10-10 16:07:45.233861] Update finished - stations updated: 7/7
+[2026-10-10 22:07:02.139589] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-10T22:00:00 PM2.5=59.38979591836734
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-10T22:00:00 PM2.5=41.69387755102041
+Worli: stored 1 day(s); newest reading 2026-10-10T22:00:00 PM2.5=19.2
+Byculla: stored 1 day(s); newest reading 2026-10-10T22:00:00 PM2.5=36.20204081632653
+Chembur: stored 1 day(s); newest reading 2026-10-10T22:00:00 PM2.5=38.032653061224494
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-10T22:00:00 PM2.5=38.642857142857146
+Failed to fetch PM2.5 for Andheri - skipping update
+Raw log: 2026-10-10 @ 2026-10-10T22:00:00+05:30 -> PM2.5=59.38979591836734, AQI=99
+Admin forecast for 2026-10-11 already logged today - skipping
+[2026-10-10 22:07:07.744116] Update finished - stations updated: 6/7 (no new data: Andheri)
+[2026-10-11 10:07:05.470038] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-11T10:00:00 PM2.5=47.79591836734694
+Weather fetch failed for Bandra Kurla Complex: Open-Meteo request failed after 3 attempts: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=19.0669&longitude=72.8686&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto - skipping update
+Worli: stored 1 day(s); newest reading 2026-10-11T10:00:00 PM2.5=21.6
+Byculla: stored 1 day(s); newest reading 2026-10-11T10:00:00 PM2.5=41.083673469387755
+Chembur: stored 1 day(s); newest reading 2026-10-11T10:00:00 PM2.5=45.96530612244898
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-11T10:00:00 PM2.5=52.06734693877551
+Andheri: stored 1 day(s); newest reading 2026-10-11T10:00:00 PM2.5=44.13469387755102
+Raw log: 2026-10-11 @ 2026-10-11T10:00:00+05:30 -> PM2.5=47.79591836734694, AQI=80
+prepare_live_features: fewer than 4 consecutive recent days of Kurla data - not forecasting yet
+Admin forecast for 2026-10-12: no fresh data to forecast from - nothing logged
+[2026-10-11 10:07:43.971517] Update finished - stations updated: 6/7 (no new data: Bandra Kurla Complex)
+[2026-10-11 16:07:02.920212] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-11T16:00:00 PM2.5=41.083673469387755
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-11T16:00:00 PM2.5=38.032653061224494
+Worli: stored 1 day(s); newest reading 2026-10-11T16:00:00 PM2.5=12.0
+Byculla: stored 1 day(s); newest reading 2026-10-11T16:00:00 PM2.5=31.93061224489796
+Chembur: stored 3 day(s); newest reading 2026-10-07T19:45:00 PM2.5=53.93
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-07T19:30:00 PM2.5=13.6
+Andheri: stored 1 day(s); newest reading 2026-10-11T16:00:00 PM2.5=40.4734693877551
+Raw log: 2026-10-11 @ 2026-10-11T16:00:00+05:30 -> PM2.5=41.083673469387755, AQI=69
+prepare_live_features: fewer than 4 consecutive recent days of Kurla data - not forecasting yet
+Admin forecast for 2026-10-12: no fresh data to forecast from - nothing logged
+[2026-10-11 16:07:29.577630] Update finished - stations updated: 7/7
+[2026-10-12 18:19:22.517389] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-12T18:00:00 PM2.5=40.4734693877551
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-12T18:00:00 PM2.5=45.96530612244898
+Worli: stored 1 day(s); newest reading 2026-10-12T18:00:00 PM2.5=23.4
+Byculla: stored 3 day(s); newest reading 2026-10-07T19:45:00 PM2.5=57.18
+Chembur: stored 1 day(s); newest reading 2026-10-12T18:00:00 PM2.5=34.371428571428574
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-07T19:30:00 PM2.5=13.6
+Andheri: stored 1 day(s); newest reading 2026-10-12T18:00:00 PM2.5=39.86326530612245
+Raw log: 2026-10-12 @ 2026-10-12T18:00:00+05:30 -> PM2.5=40.4734693877551, AQI=68
+prepare_live_features: fewer than 4 consecutive recent days of Kurla data - not forecasting yet
+Admin forecast for 2026-10-13: no fresh data to forecast from - nothing logged
+Finalized 2026-10-11: day_avg_aqi=74.0, n_readings=2
+[2026-10-12 18:19:54.463582] Update finished - stations updated: 7/7
+[2026-10-12 22:07:03.919861] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-12T22:00:00 PM2.5=52.06734693877551
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-12T22:00:00 PM2.5=39.86326530612245
+Worli: stored 1 day(s); newest reading 2026-10-12T22:00:00 PM2.5=14.4
+Byculla: stored 1 day(s); newest reading 2026-10-12T22:00:00 PM2.5=33.15102040816327
+Chembur: stored 1 day(s); newest reading 2026-10-12T22:00:00 PM2.5=37.422448979591834
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-07T19:30:00 PM2.5=13.6
+Andheri: stored 1 day(s); newest reading 2026-10-12T22:00:00 PM2.5=66.44242424242424
+Raw log: 2026-10-12 @ 2026-10-12T22:00:00+05:30 -> PM2.5=52.06734693877551, AQI=87
+prepare_live_features: fewer than 4 consecutive recent days of Kurla data - not forecasting yet
+Admin forecast for 2026-10-13: no fresh data to forecast from - nothing logged
+[2026-10-12 22:07:47.271458] Update finished - stations updated: 7/7
+[2026-10-13 12:24:45.819870] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-13T11:00:00 PM2.5=59.38979591836734
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-13T11:00:00 PM2.5=54.50816326530612
+Worli: stored 1 day(s); newest reading 2026-10-13T11:00:00 PM2.5=42.304081632653066
+Byculla: stored 1 day(s); newest reading 2026-10-13T11:00:00 PM2.5=42.91428571428571
+Chembur: stored 1 day(s); newest reading 2026-10-13T11:00:00 PM2.5=41.69387755102041
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-07T19:30:00 PM2.5=13.6
+Andheri: stored 1 day(s); newest reading 2026-10-13T11:00:00 PM2.5=47.18571428571428
+Raw log: 2026-10-13 @ 2026-10-13T11:00:00+05:30 -> PM2.5=59.38979591836734, AQI=99
+Admin forecast logged for 2026-10-14: MK6=100
+[2026-10-13 12:25:15.379876] Update finished - stations updated: 7/7
+[2026-10-13 16:07:06.156219] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-13T16:00:00 PM2.5=72.78484848484848
+Weather fetch failed for Bandra Kurla Complex: Open-Meteo request failed after 3 attempts: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=19.0669&longitude=72.8686&past_days=14&daily=temperature_2m_max%2Ctemperature_2m_min%2Cwind_speed_10m_max%2Crelative_humidity_2m_max&timezone=auto - skipping update
+Worli: stored 1 day(s); newest reading 2026-10-13T16:00:00 PM2.5=9.6
+Byculla: stored 1 day(s); newest reading 2026-10-13T16:00:00 PM2.5=41.69387755102041
+Chembur: stored 1 day(s); newest reading 2026-10-13T16:00:00 PM2.5=37.422448979591834
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 1 day(s); newest reading 2026-10-07T19:30:00 PM2.5=13.6
+Andheri: stored 1 day(s); newest reading 2026-10-13T16:00:00 PM2.5=49.6265306122449
+Raw log: 2026-10-13 @ 2026-10-13T16:00:00+05:30 -> PM2.5=72.78484848484848, AQI=143
+Admin forecast for 2026-10-14 already logged today - skipping
+[2026-10-13 16:07:43.842099] Update finished - stations updated: 6/7 (no new data: Bandra Kurla Complex)
+[2026-10-13 22:07:04.143527] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-13T22:00:00 PM2.5=65.53636363636363
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-13T22:00:00 PM2.5=49.01632653061225
+Worli: stored 1 day(s); newest reading 2026-10-13T22:00:00 PM2.5=45.96530612244898
+Byculla: stored 1 day(s); newest reading 2026-10-13T22:00:00 PM2.5=43.52448979591837
+Chembur: stored 1 day(s); newest reading 2026-10-13T22:00:00 PM2.5=44.744897959183675
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 6 day(s); newest reading 2026-10-12T05:00:00 PM2.5=35.6
+Andheri: stored 1 day(s); newest reading 2026-10-13T22:00:00 PM2.5=70.67070707070707
+Raw log: 2026-10-13 @ 2026-10-13T22:00:00+05:30 -> PM2.5=65.53636363636363, AQI=119
+Admin forecast for 2026-10-14 already logged today - skipping
+[2026-10-13 22:07:50.294315] Update finished - stations updated: 7/7
+[2026-10-14 10:47:07.003487] Scheduled update started.
+CPCB feed unavailable: ConnectionError: HTTPSConnectionPool(host='airquality.cpcb.gov.in', port=443): Max retries exceeded with url: /caaqms/rss_feed (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFEAA46A0>: Failed to resolve 'airquality.cpcb.gov.in' ([Errno 11001] getaddrinfo failed)"))
+openaq: sensor lookup failed for Kurla (location_id=6945): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/6945 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFEAAE220>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Kurla - skipping update
+openaq: sensor lookup failed for Bandra Kurla Complex (location_id=3409482): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409482 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFEAA4910>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Bandra Kurla Complex - skipping update
+openaq: sensor lookup failed for Worli (location_id=3409323): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409323 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFEAA4040>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Worli - skipping update
+openaq: sensor lookup failed for Byculla (location_id=3409510): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409510 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFDAB6D30>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Byculla - skipping update
+openaq: sensor lookup failed for Chembur (location_id=3409483): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/3409483 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFEAAECA0>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Chembur - skipping update
+openaq: sensor lookup failed for Powai (location_id=6956): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/6956 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFEAB66A0>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+Failed to fetch PM2.5 for Powai - skipping update
+Failed to fetch PM2.5 for Andheri - skipping update
+openaq: sensor lookup failed for Kurla (location_id=6945): HTTPSConnectionPool(host='api.openaq.org', port=443): Max retries exceeded with url: /v3/locations/6945 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016CFDAB6B80>: Failed to resolve 'api.openaq.org' ([Errno 11001] getaddrinfo failed)"))
+fetch_pm25: no readings for Kurla in the last 3 days
+Raw log: PM2.5 fetch failed, skipping this run's snapshot
+Admin forecast logged for 2026-10-15: MK6=100
+[2026-10-14 10:47:54.461815] Update finished - stations updated: 0/7 (no new data: Kurla, Bandra Kurla Complex, Worli, Byculla, Chembur, Powai, Andheri)
+[2026-10-14 16:37:06.583617] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-14T16:00:00 PM2.5=43.52448979591837
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-14T16:00:00 PM2.5=42.304081632653066
+Worli: stored 1 day(s); newest reading 2026-10-14T16:00:00 PM2.5=15.6
+Byculla: stored 1 day(s); newest reading 2026-10-14T16:00:00 PM2.5=31.93061224489796
+Chembur: stored 1 day(s); newest reading 2026-10-14T16:00:00 PM2.5=36.20204081632653
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 7 day(s); newest reading 2026-10-13T20:00:00 PM2.5=48.8
+Andheri: stored 1 day(s); newest reading 2026-10-14T16:00:00 PM2.5=51.457142857142856
+Raw log: 2026-10-14 @ 2026-10-14T16:00:00+05:30 -> PM2.5=43.52448979591837, AQI=73
+Admin forecast for 2026-10-15 already logged today - skipping
+[2026-10-14 16:37:33.133689] Update finished - stations updated: 7/7
+[2026-10-14 22:07:06.274775] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-14T22:00:00 PM2.5=52.67755102040816
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-14T22:00:00 PM2.5=45.96530612244898
+Worli: stored 1 day(s); newest reading 2026-10-14T22:00:00 PM2.5=16.2
+Byculla: stored 1 day(s); newest reading 2026-10-14T22:00:00 PM2.5=28.2
+Chembur: stored 1 day(s); newest reading 2026-10-14T22:00:00 PM2.5=38.642857142857146
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 6 day(s); newest reading 2026-10-13T20:00:00 PM2.5=48.8
+Andheri: stored 1 day(s); newest reading 2026-10-14T22:00:00 PM2.5=55.72857142857143
+Raw log: 2026-10-14 @ 2026-10-14T22:00:00+05:30 -> PM2.5=52.67755102040816, AQI=88
+Admin forecast for 2026-10-15 already logged today - skipping
+[2026-10-14 22:07:50.309856] Update finished - stations updated: 7/7
+[2026-10-15 19:12:50.703390] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-15T19:00:00 PM2.5=48.406122448979595
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-15T19:00:00 PM2.5=49.6265306122449
+Worli: stored 1 day(s); newest reading 2026-10-15T19:00:00 PM2.5=37.422448979591834
+Byculla: stored 1 day(s); newest reading 2026-10-15T19:00:00 PM2.5=42.91428571428571
+Chembur: stored 1 day(s); newest reading 2026-10-15T19:00:00 PM2.5=42.91428571428571
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 6 day(s); newest reading 2026-10-13T20:00:00 PM2.5=48.8
+CPCB: no feed station for Andheri
+Failed to fetch PM2.5 for Andheri - skipping update
+Raw log: 2026-10-15 @ 2026-10-15T19:00:00+05:30 -> PM2.5=48.406122448979595, AQI=81
+Admin forecast logged for 2026-10-16: MK6=100
+Finalized 2026-10-14: day_avg_aqi=80.0, n_readings=2
+[2026-10-15 19:13:15.853307] Update finished - stations updated: 6/7 (no new data: Andheri)
+[2026-10-15 22:07:04.534413] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-15T22:00:00 PM2.5=45.96530612244898
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-15T22:00:00 PM2.5=44.744897959183675
+Worli: stored 1 day(s); newest reading 2026-10-15T22:00:00 PM2.5=19.2
+Byculla: stored 1 day(s); newest reading 2026-10-15T22:00:00 PM2.5=34.981632653061226
+Chembur: stored 1 day(s); newest reading 2026-10-15T22:00:00 PM2.5=44.13469387755102
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 6 day(s); newest reading 2026-10-13T20:00:00 PM2.5=48.8
+Andheri: stored 1 day(s); newest reading 2026-10-15T22:00:00 PM2.5=65.23434343434343
+Raw log: 2026-10-15 @ 2026-10-15T22:00:00+05:30 -> PM2.5=45.96530612244898, AQI=77
+Admin forecast for 2026-10-16 already logged today - skipping
+[2026-10-15 22:07:35.919093] Update finished - stations updated: 7/7
+[2026-10-16 10:28:26.277820] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-16T10:00:00 PM2.5=61.30808080808081
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-16T10:00:00 PM2.5=67.04646464646464
+Worli: stored 5 day(s); newest reading 2026-10-13T23:15:00 PM2.5=54.0
+Byculla: stored 1 day(s); newest reading 2026-10-16T10:00:00 PM2.5=50.23673469387755
+Chembur: stored 1 day(s); newest reading 2026-10-16T10:00:00 PM2.5=63.724242424242426
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 5 day(s); newest reading 2026-10-13T20:00:00 PM2.5=48.8
+Andheri: stored 1 day(s); newest reading 2026-10-16T10:00:00 PM2.5=83.05353535353535
+Raw log: 2026-10-16 @ 2026-10-16T10:00:00+05:30 -> PM2.5=61.30808080808081, AQI=105
+Admin forecast logged for 2026-10-17: MK6=96
+Finalized 2026-10-15: day_avg_aqi=79.0, n_readings=2
+[2026-10-16 10:29:01.462458] Update finished - stations updated: 7/7
+[2026-10-16 17:52:00.327701] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-16T17:00:00 PM2.5=82.75151515151515
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-16T17:00:00 PM2.5=62.214141414141416
+CPCB: no feed station for Worli
+Worli: stored 5 day(s); newest reading 2026-10-13T23:15:00 PM2.5=54.0
+Byculla: stored 1 day(s); newest reading 2026-10-16T17:00:00 PM2.5=47.18571428571428
+Chembur: stored 1 day(s); newest reading 2026-10-16T17:00:00 PM2.5=49.6265306122449
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 5 day(s); newest reading 2026-10-13T20:00:00 PM2.5=48.8
+Andheri: stored 1 day(s); newest reading 2026-10-16T17:00:00 PM2.5=64.63030303030303
+Raw log: 2026-10-16 @ 2026-10-16T17:00:00+05:30 -> PM2.5=82.75151515151515, AQI=176
+Admin forecast for 2026-10-17 already logged today - skipping
+[2026-10-16 17:52:19.618700] Update finished - stations updated: 7/7
+[2026-10-17 11:09:20.962022] Scheduled update started.
+Kurla: stored 1 day(s); newest reading 2026-10-17T11:00:00 PM2.5=77.01313131313131
+Bandra Kurla Complex: stored 1 day(s); newest reading 2026-10-17T11:00:00 PM2.5=61.61010101010101
+Worli: stored 1 day(s); newest reading 2026-10-17T11:00:00 PM2.5=65.23434343434343
+Byculla: stored 1 day(s); newest reading 2026-10-17T11:00:00 PM2.5=58.779591836734696
+Chembur: stored 1 day(s); newest reading 2026-10-17T11:00:00 PM2.5=66.44242424242424
+CPCB: Powai matched by location to 'Powai, Mumbai - MPCB' (2.4 km) - pin it as cpcb_name in STATIONS.py if correct
+Powai: stored 4 day(s); newest reading 2026-10-13T20:00:00 PM2.5=48.8
+Andheri: stored 1 day(s); newest reading 2026-10-17T11:00:00 PM2.5=89.3959595959596
+Raw log: 2026-10-17 @ 2026-10-17T11:00:00+05:30 -> PM2.5=77.01313131313131, AQI=157
+Admin forecast logged for 2026-10-18: MK6=172
+Finalized 2026-10-16: day_avg_aqi=140.0, n_readings=2
+[2026-10-17 11:10:47.322058] Update finished - stations updated: 7/7

@@ -1,7 +1,6 @@
-__pycache__/
-*.pyc
-.vscode/
-venv/
-env/
-*.pkl
 .env
+*.db
+__pycache__/
+scheduler_log.txt
+TRNSET.csv
+VALSET.csv

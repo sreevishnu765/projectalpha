@@ -1,9 +1,10 @@
-breakpoints = [(0, 30, 0, 50, "Good"), (30.1, 60, 51, 100, "Satisfactory"), (60.1, 90, 101, 200, "Moderate"), (90.1, 120, 201, 300, "Poor"), (120.1, 250, 301, 400, "Very Poor"), (250.1, 380, 401, 500, "Severe"),
-]
+# breakpoint definition
+breakpoints = [(0, 30, 0, 50, "Good"), (30.1, 60, 51, 100, "Satisfactory"), (60.1, 90, 101, 200, "Moderate"), (90.1, 120, 201, 300, "Poor"), (120.1, 250, 301, 400, "Very Poor"), (250.1, 380, 401, 500, "Severe"),]
 
+#function for conversion
 def pm25_to_aqi(concentration):
     for BP_low, BP_high, AQI_low, AQI_high, category in breakpoints:
-        if concentration >= BP_low and concentration <= BP_high:
+        if concentration >= 0 and concentration <= BP_high:
             aqi = ((AQI_high - AQI_low) / (BP_high - BP_low)) * (concentration - BP_low) + AQI_low
             return round(aqi), category, None
 
@@ -12,6 +13,18 @@ def pm25_to_aqi(concentration):
 
     return None, "Invalid", "Concentration value out of expected range"
 
+# inverse of pm25_to_aqi
+def aqi_to_pm25(index):
+    if index is None or index < 0 or index > 500:
+        return None
+    for BP_low, BP_high, AQI_low, AQI_high, category in breakpoints:
+        if index <= AQI_high:
+            if index < AQI_low:
+                return BP_low
+            return (index - AQI_low) * (BP_high - BP_low) / (AQI_high - AQI_low) + BP_low
+    return None
+
+#advisory layer messages
 advisory_messages = {
     "Good": {
         "general": "Air quality is good. Enjoy outdoor activities freely.",
